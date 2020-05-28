@@ -1,6 +1,10 @@
 from random import randint
+from flask import Flask
 import sys
 
+app = Flask(__name__)
+
+@app.route('/')
 loop = True
 player_score = 0
 computer_score = 0
@@ -92,3 +96,6 @@ if player_score > computer_score:
     print("Congratulations! You win the Game! :)")
 else:
     print("Computer wins the Game. Better luck next time :(")
+
+if __name__ == '__main__':
+    app.run(debug=True)
